@@ -1,0 +1,2 @@
+SQUID %{IPORHOST:src_ip} - - \[%{HTTPDATE:timestamp}\] "%{NOTSPACE:http_method} (()(?:%{PROTO_URL:url_host}%{URIPATHPARAM:url_path})|%{URIHOST:url_host}:%{INT:url_port})(?: HTTP/%{NUMBER:http_version})" %{NUMBER:http_status_code:int} (?:%{NUMBER:bytes}|-) "(?:--|%{DATA:url_command})" "%{DATA:http_user_agent}" %{NOTSPACE:squid_request_status}:%{NOTSPACE:peer_code}
+PROTO_URL %{URIPROTO}://%{URIHOST}
